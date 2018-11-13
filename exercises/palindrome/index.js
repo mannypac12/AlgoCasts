@@ -7,6 +7,22 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+
+    let len = str.length
+
+    if (len % 2 !== 0) {
+        return false
+    } else {
+        let frt_str = str.slice(0, len/2)
+        let comp_str = str.slice(len)
+
+        return frt_str.split('').reduce((acc, cur) => {return cur + acc}, '') === comp_str
+    } 
+    // if the string length is not even false
+        // split the stiring half
+        // if the reversed string of the first is the same as the second.
+        // then true or not
+}
 
 module.exports = palindrome;
