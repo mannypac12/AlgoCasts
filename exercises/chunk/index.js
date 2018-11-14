@@ -11,9 +11,32 @@
 function chunk(array, size) {
     
     // size >= array.length then return array itself
-    // else
-    // new [] / [].push()
 
-}
+
+    // nested array => Math.floor(array.length / size)
+    // Max subarray length <= Math.floor(array.length / size)
+        const sub = []
+        let index = 0;
+
+        while (index < array.length) {
+            sub.push(array.slice(index, index+size))
+            index += size;
+        }
+
+        return sub
+        // let sub = []
+        // array.forEach(el => {
+        //     if (sub.length < size) {
+        //         sub.push(el)
+        //     } else {
+        //         ans.push(sub)
+        //         sub = []
+        //         sub.push(el)
+        //     } 
+        // })
+        // ans.push(sub)
+        // return ans
+};
+
 
 module.exports = chunk;
