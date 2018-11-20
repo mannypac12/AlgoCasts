@@ -8,8 +8,23 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-
-
+    let i = 0
+    str
+        .toLowerCase()
+        .split('')
+        .forEach(el => {
+        if (el === 'a' || el === 'e' || el === 'i' || el === 'o' || el === 'u') {
+            i++
+        }
+    })
+    return i
 }
+
+console.log(vowels('Hi There!'))
+console.log(vowels('Why do you ask?'))
+
+// new function
+// object containing keys, aieou, starts false, if exists, true, if not false
+// then sum
 
 module.exports = vowels;
